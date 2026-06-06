@@ -69,12 +69,9 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn-envoyer" id="btn-submit">Envoyer le message <span class="fleche">→</span></button>
+            <button type="submit" class="btn-envoyer">Envoyer le message <span class="fleche">→</span></button>
             <div class="form-note" id="form-message-retour" style="display:none;">
-              ✓ Message bien reçu ! Le secrétariat vous répondra dans les meilleurs délais.
-            </div>
-            <div class="form-note" id="form-message-erreur" style="display:none; color:#d32f2f;">
-              ✗ Erreur lors de l'envoi. Veuillez réessayer ou contacter directement le secrétariat.
+              ✓ Démo : message bien reçu côté navigateur. L'envoi réel sera branché par la copropriété (email ou service de formulaire).
             </div>
           </form>
         </div>
@@ -106,94 +103,19 @@
     </div>
   </footer>
 
-  <!-- EmailJS SDK — bonne URL + bon fichier -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/contenu.js"></script>
   <script src="js/app.js"></script>
   <script>
-    // ===== CONFIGURATION EmailJS =====
-    const EMAILJS_SERVICE_ID  = "service_4ra35vr";
-    const EMAILJS_TEMPLATE_ID = "template_s0o64pr";
-    const RECIPIENT_EMAIL     = "matheojannest26@gmail.com";
-
-    // Initialisation v4 : syntaxe objet obligatoire
-    emailjs.init({ publicKey: "Xqk_OR2lIjAhXB43n" });
-
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Infos de contact depuis contenu.js
-      var c = window.contenu && window.contenu.contact;
+      var c = window.contenu.contact;
       if (c) {
-        document.getElementById('contact-intro').textContent     = c.intro;
-        document.getElementById('contact-email').textContent     = c.email;
-        document.getElementById('contact-tel').textContent       = c.telephone;
-        document.getElementById('contact-adresse').textContent   = c.adresse;
-        document.getElementById('contact-horaires').textContent  = c.horairesAccueil;
+        document.getElementById('contact-intro').textContent = c.intro;
+        document.getElementById('contact-email').textContent = c.email;
+        document.getElementById('contact-tel').textContent = c.telephone;
+        document.getElementById('contact-adresse').textContent = c.adresse;
+        document.getElementById('contact-horaires').textContent = c.horairesAccueil;
       }
-
-      // Soumission du formulaire
-      document.getElementById('form-contact').addEventListener('submit', function (e) {
-        e.preventDefault();
-        envoyerFormulaire();
-      });
     });
-
-function envoyerFormulaire() {
-  var btn          = document.getElementById('btn-submit');
-  var msgOk        = document.getElementById('form-message-retour');
-  var msgErr       = document.getElementById('form-message-erreur');
-  var form         = document.getElementById('form-contact');
-
-  msgOk.style.display  = 'none';
-  msgErr.style.display = 'none';
-
-  btn.disabled    = true;
-  btn.textContent = 'Envoi en cours…';
-
-  var nom      = document.getElementById('nom').value;
-  var email    = document.getElementById('email').value;
-  var objet    = document.getElementById('objet').value;
-  var message  = document.getElementById('message').value;
-
-  var templateParams = {
-    nom:      nom,
-    email:    email,
-    objet:    objet,
-    message:  message,
-    to_email: RECIPIENT_EMAIL,
-    date:     new Date().toLocaleDateString('fr-FR')
-  };
-
-  // Email 1 : Envoyer au secrétariat
-  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-    .then(function (response) {
-      console.log('Email au secrétariat envoyé !', response.status);
-      
-      // Email 2 : Envoyer la confirmation à l'utilisateur
-      var confirmParams = {
-        nom:   nom,
-        email: email,
-        objet: objet,
-        date:  new Date().toLocaleDateString('fr-FR')
-      };
-      
-      return emailjs.send(EMAILJS_SERVICE_ID, 'template_bh2p8dt', confirmParams);
-    })
-    .then(function (response) {
-      console.log('Confirmation envoyée à l\'utilisateur !', response.status);
-      msgOk.style.display = 'block';
-      form.reset();
-      btn.disabled    = false;
-      btn.textContent = 'Envoyer le message →';
-    }, function (error) {
-      console.error('Erreur :', error);
-      msgErr.style.display = 'block';
-      btn.disabled    = false;
-      btn.textContent = 'Envoyer le message →';
-    });
-}
-
   </script>
-
 </body>
 </html>

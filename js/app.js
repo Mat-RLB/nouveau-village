@@ -228,20 +228,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* -----------------------------------------------------------------
-     5. FORMULAIRE DE CONTACT
-     ----------------------------------------------------------------- */
-  const formContact = document.getElementById('form-contact');
-  if (formContact) {
-    formContact.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const msg = document.getElementById('form-message-retour');
-      if (msg) {
-        msg.style.display = 'block';
-        msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-      formContact.reset();
-    });
-  }
+
 
 });

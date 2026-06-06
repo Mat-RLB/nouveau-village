@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nouveau Village — Accueil | ASL Cesson 77240</title>
+  <meta name="description" content="Le portail de la copropriété Nouveau Village à Cesson : actualités, assemblées générales, documents, espaces verts et infos pratiques pour les résidents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- EN-TÊTE -->
+  <header class="entete">
+    <div class="entete-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-pastille"></span>
+        <span class="logo-texte">Nouveau Village</span>
+      </a>
+      <button class="menu-burger" aria-label="Ouvrir le menu">☰</button>
+      <nav class="nav-liens">
+        <a href="index.html" class="actif">Accueil</a>
+        <a href="residence.html">La résidence</a>
+        <a href="vie-copro.html">Vie de copro</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HÉRO -->
+  <section class="hero">
+    <div class="conteneur">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-eyebrow">Bienvenue à Cesson</div>
+          <h1>La vie au <span class="accent">Nouveau Village</span></h1>
+          <p>Une résidence, des voisins, des moments partagés. Bienvenue dans notre coin de Cesson.</p>
+          <div class="hero-btns">
+            <a href="#actualites" class="btn-primaire">Voir les actualités <span class="fleche">→</span></a>
+            <a href="residence.html" class="btn-secondaire">Découvrir la résidence</a>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div class="hero-mosaique">
+            <div class="pic">
+              <img src="images/residence.jpg" alt="La résidence" style="width:100%; height:100%; object-fit:cover; transform:scale(1.05);">
+            </div>
+            <div class="pic">
+              <div class="placeholder-content">
+               <img src="images/vert.jpg" alt="Espace Vert" style="width:100%; height:100%; border-radius:20px; object-fit:cover;">
+              </div>
+            </div>
+            <div class="pic">
+              <img src="images/piscine.jpg" alt="La piscine de la résidence" style="width:100%; border-radius:20px; object-fit:cover; aspect-ratio:4/5;">
+            </div>
+          </div>
+          <div class="hero-badge">
+            <div class="gros">ASL</div>
+            <div class="pti">Nouveau Village</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLS D'INFOS -->
+  <div class="pills reveal">
+    <a href="vie-copro.html#agenda" class="pill">
+      <div class="pill-ico">📅</div>
+      <div><strong>Prochaine AG</strong><span data-pill="ag-date">[date]</span></div>
+    </a>
+    <a href="residence.html#piscine" class="pill">
+      <div class="pill-ico">🏊</div>
+      <div><strong>Piscine</strong><span data-pill="piscine">[horaires]</span></div>
+    </a>
+    <a href="residence.html#vert" class="pill">
+      <div class="pill-ico">🌳</div>
+      <div><strong>Espaces verts</strong><span>Entretenus chaque saison</span></div>
+    </a>
+      <a href="contact.html" class="pill">
+      <div class="pill-ico">📬</div>
+      <div><strong>Contact</strong><span>Secrétariat de l'ASL</span></div>
+    </a>
+  </div>
+
+  <!-- ANNONCE -->
+  <div class="conteneur annonce-wrap" id="annonce-wrap">
+    <div class="annonce reveal" id="annonce-principale"></div>
+  </div>
+
+  <!-- ACCÈS RAPIDES -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="section-tete">
+        <div>
+          <span class="section-eyebrow">Accès rapides</span>
+          <h2 class="section-titre">Tout ce dont vous avez <em>besoin</em></h2>
+          <p class="section-soustitre">Retrouvez les informations essentielles de la copropriété en quelques clics.</p>
+        </div>
+      </div>
+      <div class="grille-cartes reveal-stagger" id="acces-rapides"></div>
+    </div>
+  </section>
+
+  <!-- ACTUALITÉS -->
+  <section class="section actu-fond" id="actualites">
+    <div class="conteneur">
+      <div class="section-tete">
+        <div>
+          <span class="section-eyebrow">Actualités</span>
+          <h2 class="section-titre">Les <em>dernières infos</em></h2>
+          <p class="section-soustitre">Ce qui se passe dans la résidence en ce moment.</p>
+        </div>
+        <a href="documents.html" class="section-lien">Voir les documents →</a>
+      </div>
+      <div class="grille-actus reveal-stagger" id="liste-actus"></div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="section-tete">
+        <div>
+          <span class="section-eyebrow">Rendez-vous</span>
+          <h2 class="section-titre">Prochains <em>rendez-vous</em></h2>
+          <p class="section-soustitre">Les réunions et événements à venir de la copropriété.</p>
+        </div>
+      </div>
+      <div class="agenda reveal-stagger" id="liste-agenda"></div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section" style="padding-top: 20px;">
+    <div class="conteneur">
+      <div class="cta-final reveal">
+        <h2>Une question, une <em>idée</em>, un signalement ?</h2>
+        <p>Le secrétariat de l'ASL est à l'écoute des résidents et propriétaires. N'hésitez pas à nous contacter.</p>
+        <a href="contact.html" class="btn-cta">Nous écrire →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIED -->
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-grille">
+        <div>
+          <div class="pied-logo"><span class="pastille"></span>Nouveau Village</div>
+          <p class="pied-desc">Association Syndicale Libre des Propriétaires du Groupe d'Habitation de Nouveau Village — Cesson 77240. Le portail des résidents pour la vie de la copropriété.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="residence.html">La résidence</a>
+          <a href="vie-copro.html">Vie de copro</a>
+          <a href="documents.html">Documents</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="contact.html">Secrétariat de l'ASL</a>
+          <a href="contact.html">Signaler un problème</a>
+        </div>
+      </div>
+      <div class="pied-bas">© <span data-annee></span> ASL Nouveau Village — Cesson 77240. Site à usage des résidents.</div>
+    </div>
+  </footer>
+
+  <script src="js/contenu.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    /* Petites infos spécifiques aux pills de l'accueil */
+    document.addEventListener('DOMContentLoaded', function () {
+      var c = window.contenu;
+      if (c) {
+        var dAg = document.querySelector('[data-pill="ag-date"]');
+        if (dAg && c.annoncePrincipale) dAg.textContent = c.annoncePrincipale.date;
+        var dPi = document.querySelector('[data-pill="piscine"]');
+        if (dPi && c.piscine) dPi.textContent = c.piscine.horaires;
+      }
+    });
+  </script>
+</body>
+</html>

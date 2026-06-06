@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La résidence — Nouveau Village | Espaces verts & piscine</title>
+  <meta name="description" content="Découvrez la résidence Nouveau Village : ses espaces verts, son patrimoine arboré et sa piscine.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="entete-inner">
+      <a class="logo" href="index.html"><span class="logo-pastille"></span><span class="logo-texte">Nouveau Village</span></a>
+      <button class="menu-burger" aria-label="Ouvrir le menu">☰</button>
+      <nav class="nav-liens">
+        <a href="index.html">Accueil</a>
+        <a href="residence.html" class="actif">La résidence</a>
+        <a href="vie-copro.html">Vie de copro</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 56px 0 64px;">
+    <div class="conteneur">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+        <div>
+          <div class="hero-eyebrow">Cadre de vie</div>
+          <h1 style="font-size: 52px;">Notre <span class="accent">résidence</span></h1>
+          <p>Un environnement verdoyant et des équipements partagés, au cœur de Cesson.</p>
+        </div>
+        <div style="height: 350px; overflow: hidden;">
+  <div class="photo-placeholder pp-residence var-clair" style="width:100%; height:100%;">
+    <div class="pp-ico">🏡</div>
+    <div class="pp-txt">Photo à venir</div>
+    <div class="pp-sous">La résidence</div>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPACES VERTS -->
+  <section class="section" id="vert">
+    <div class="conteneur">
+      <div class="bloc-double reveal";>
+        <div style="margin-top: -235px;">
+          <span class="section-eyebrow">Espaces verts</span>
+          <h2>Un patrimoine arboré <em>entretenu collectivement</em></h2>
+          <p id="ev-intro"></p>
+          <ul id="espaces-verts-points"></ul>
+        </div>
+        <div class="photo-placeholder pp-arbres var-clair">
+          <img src="images/vert.jpg" alt="La piscine de la résidence" style="width:100%; border-radius:20px; object-fit:cover; aspect-ratio:4/5; transform:scale(1.19);">>
+          <div class="pp-sous">Espaces verts de la résidence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PISCINE -->
+  <section class="section actu-fond" id="piscine">
+    <div class="conteneur">
+      <div class="bloc-double reveal">
+        <img src="images/piscine.jpg" alt="La piscine de la résidence" style="width:100%; border-radius:20px; object-fit:cover; aspect-ratio:4/5;">
+        <div>
+          <span class="section-eyebrow">Piscine</span>
+          <h2>Un <em>équipement partagé</em> pour les beaux jours</h2>
+          <p id="piscine-resume"></p>
+          <div style="display:flex; flex-direction:column; gap:12px; margin-top:24px;">
+            <div class="contact-item">
+              <span class="ci-ico">🕒</span>
+              <div><div class="ci-label">Horaires</div><div class="ci-val" id="piscine-horaires">[à remplacer]</div></div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-ico">📅</span>
+              <div><div class="ci-label">Période d'ouverture</div><div class="ci-val" id="piscine-periode">[à remplacer]</div></div>
+            </div>
+          </div>
+          <a href="documents.html#cat-piscine" class="btn-primaire" style="margin-top: 24px; display: inline-flex;">
+            📄 Règlement intérieur <span class="fleche">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section class="section">
+    <div class="conteneur">
+      <div class="section-tete">
+        <div>
+          <span class="section-eyebrow">Galerie</span>
+          <h2 class="section-titre">La résidence <em>en images :</em></h2>
+          <p class="section-soustitre">Cliquez sur une photo pour l'agrandir.</p>
+        </div>
+      </div>
+      <div class="grille-cartes reveal-stagger" style="grid-template-columns:repeat(3,1fr);">
+        <div class="galerie-item photo-placeholder pp-photo" data-galerie="0" style="aspect-ratio: 4/3; cursor: pointer;">
+          <div class="pp-ico" style="font-size:48px;">📷</div>
+          <div class="pp-txt">Photo 1</div>
+        </div>
+        <div class="galerie-item photo-placeholder pp-photo var-clair" data-galerie="1" style="aspect-ratio: 4/3; cursor: pointer;">
+          <div class="pp-ico" style="font-size:48px;">📷</div>
+          <div class="pp-txt">Photo 2</div>
+        </div>
+        <div class="galerie-item photo-placeholder pp-photo var-or" data-galerie="2" style="aspect-ratio: 4/3; cursor: pointer;">
+          <div class="pp-ico" style="font-size:48px;">📷</div>
+          <div class="pp-txt">Photo 3</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX (modal galerie) -->
+  <div id="lightbox" class="lightbox" style="display: none;">
+    <div class="lightbox-overlay" onclick="fermerLightbox()"></div>
+    <button class="lightbox-fermer" onclick="fermerLightbox()" aria-label="Fermer">✕</button>
+    <button class="lightbox-precedent" onclick="navLightbox(-1)" aria-label="Précédente">‹</button>
+    <button class="lightbox-suivant" onclick="navLightbox(1)" aria-label="Suivante">›</button>
+    <div class="lightbox-contenu">
+      <div id="lightbox-photo" class="lightbox-photo"></div>
+      <div class="lightbox-legende"><span id="lightbox-titre"></span> <span id="lightbox-position"></span></div>
+    </div>
+  </div>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-grille">
+        <div>
+          <div class="pied-logo"><span class="pastille"></span>Nouveau Village</div>
+          <p class="pied-desc">Association Syndicale Libre des Propriétaires du Groupe d'Habitation de Nouveau Village — Cesson 77240.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="residence.html">La résidence</a>
+          <a href="vie-copro.html">Vie de copro</a>
+          <a href="documents.html">Documents</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="contact.html">Secrétariat de l'ASL</a>
+        </div>
+      </div>
+      <div class="pied-bas">© <span data-annee></span> ASL Nouveau Village — Cesson 77240. Site à usage des résidents.</div>
+    </div>
+  </footer>
+
+  <script src="js/contenu.js"></script>
+  <script src="js/app.js"></script> 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var c = window.contenu;
+      if (c.espacesVerts) document.getElementById('ev-intro').textContent = c.espacesVerts.intro;
+      if (c.piscine) {
+        document.getElementById('piscine-resume').textContent = c.piscine.reglementResume;
+        document.getElementById('piscine-horaires').textContent = c.piscine.horaires;
+        document.getElementById('piscine-periode').textContent = c.piscine.periode;
+      }
+    });
+
+    /* ====== LIGHTBOX GALERIE ====== */
+    /* Définition des photos de la galerie.
+       Pour mettre de vraies photos plus tard, remplace les "couleur" et "titre"
+       par "src" pointant vers tes images. */
+    const galeriePhotos = [
+      { titre: "Photo 1", couleur: "linear-gradient(135deg, #2f6b4f, #1f4a37)", ico: "📷" },
+      { titre: "Photo 2", couleur: "linear-gradient(135deg, #a8c9a4, #4d8c66)", ico: "📷" },
+      { titre: "Photo 3", couleur: "linear-gradient(135deg, #c9a24b, #9a7415)", ico: "📷" }
+    ];
+    let galerieIndex = 0;
+
+    /* Ouvre la lightbox sur l'image cliquée */
+    document.querySelectorAll('.galerie-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        galerieIndex = parseInt(item.getAttribute('data-galerie'));
+        ouvrirLightbox();
+      });
+    });
+
+    function ouvrirLightbox() {
+      const lb = document.getElementById('lightbox');
+      const photo = document.getElementById('lightbox-photo');
+      const titre = document.getElementById('lightbox-titre');
+      const position = document.getElementById('lightbox-position');
+      const p = galeriePhotos[galerieIndex];
+      
+      /* Si on a une vraie image (src), on l'affiche ; sinon, dégradé */
+      if (p.src) {
+        photo.innerHTML = '<img src="' + p.src + '" alt="' + p.titre + '">';
+      } else {
+        photo.innerHTML = '<div class="lb-placeholder" style="background:' + p.couleur + ';"><span>' + p.ico + '</span><div style="font-size:18px; margin-top:12px; font-weight:600;">' + p.titre + '</div></div>';
+      }
+      titre.textContent = p.titre;
+      position.textContent = '(' + (galerieIndex + 1) + '/' + galeriePhotos.length + ')';
+      lb.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function fermerLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function navLightbox(dir) {
+      galerieIndex = (galerieIndex + dir + galeriePhotos.length) % galeriePhotos.length;
+      ouvrirLightbox();
+    }
+
+    /* Navigation clavier */
+    document.addEventListener('keydown', function (e) {
+      if (document.getElementById('lightbox').style.display === 'flex') {
+        if (e.key === 'Escape') fermerLightbox();
+        if (e.key === 'ArrowLeft') navLightbox(-1);
+        if (e.key === 'ArrowRight') navLightbox(1);
+      }
+    });
+  </script>
+</body>
+</html>

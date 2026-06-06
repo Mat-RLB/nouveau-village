@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Délégués de rue — Nouveau Village</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="entete-inner">
+      <a class="logo" href="index.html"><span class="logo-pastille"></span><span class="logo-texte">Nouveau Village</span></a>
+      <button class="menu-burger" aria-label="Ouvrir le menu">☰</button>
+      <nav class="nav-liens">
+        <a href="index.html">Accueil</a>
+        <a href="residence.html">La résidence</a>
+        <a href="vie-copro.html" class="actif">Vie de copro</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 56px 0 32px;">
+    <div class="conteneur">
+      <a href="vie-copro.html" style="color: var(--vert); font-weight: 600; font-size: 14px; display: inline-block; margin-bottom: 20px;">← Retour à la vie de copro</a>
+      <div class="hero-eyebrow">Organisation</div>
+      <h1 style="font-size: 48px;">Les <span class="accent">délégués</span> de rue</h1>
+      <p>Vos interlocuteurs de proximité par secteur de la résidence.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 20px;">
+    <div class="conteneur" style="max-width: 800px;">
+
+      <div style="background: var(--blanc); border: 1px solid var(--bordure); border-radius: var(--rayon); padding: 36px; margin-bottom: 20px;">
+        <h2 style="font-size: 22px; margin-bottom: 16px; color: var(--vert);">🏘️ Secteur 1</h2>
+        <p>[Nom du délégué] — Rues : [liste à compléter]</p>
+      </div>
+      <div style="background: var(--blanc); border: 1px solid var(--bordure); border-radius: var(--rayon); padding: 36px; margin-bottom: 20px;">
+        <h2 style="font-size: 22px; margin-bottom: 16px; color: var(--vert);">🏘️ Secteur 2</h2>
+        <p>[Nom du délégué] — Rues : [liste à compléter]</p>
+      </div>
+      <div style="background: var(--blanc); border: 1px solid var(--bordure); border-radius: var(--rayon); padding: 36px; margin-bottom: 20px;">
+        <h2 style="font-size: 22px; margin-bottom: 16px; color: var(--vert);">🏘️ Secteur 3</h2>
+        <p>[Nom du délégué] — Rues : [liste à compléter]</p>
+      </div>
+      <div style="background: var(--blanc); border: 1px solid var(--bordure); border-radius: var(--rayon); padding: 36px; margin-bottom: 20px;">
+        <h2 style="font-size: 22px; margin-bottom: 16px; color: var(--vert);">🏘️ Secteur 4</h2>
+        <p>[Nom du délégué] — Rues : [liste à compléter]</p>
+      </div>
+      <div style="background: var(--blanc); border: 1px solid var(--bordure); border-radius: var(--rayon); padding: 36px; margin-bottom: 20px;">
+        <h2 style="font-size: 22px; margin-bottom: 16px; color: var(--vert);">📬 Comment contacter votre délégué ?</h2>
+        <p>Chaque délégué de rue est le relais entre les habitants et le comité de l'ASL. N'hésitez pas à le solliciter pour toute question concernant votre secteur.</p>
+      </div>
+
+      <div style="background: var(--vert-pale); border-radius: var(--rayon); padding: 30px; text-align: center; margin-top: 32px;">
+        <p style="font-size: 14px; color: var(--texte-doux); font-style: italic;">📄 Ce document est un contenu générique temporaire. La version finale sera fournie par la copropriété.</p>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="vie-copro.html" class="btn-primaire">← Retour à la vie de copro</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-grille">
+        <div>
+          <div class="pied-logo"><span class="pastille"></span>Nouveau Village</div>
+          <p class="pied-desc">Association Syndicale Libre des Propriétaires du Groupe d'Habitation de Nouveau Village — Cesson 77240.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="residence.html">La résidence</a>
+          <a href="vie-copro.html">Vie de copro</a>
+          <a href="documents.html">Documents</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="contact.html">Secrétariat de l'ASL</a>
+        </div>
+      </div>
+      <div class="pied-bas">© <span data-annee></span> ASL Nouveau Village — Cesson 77240. Site à usage des résidents.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-annee]').forEach(el => el.textContent = new Date().getFullYear());
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Nouveau Village | Secrétariat de l'ASL</title>
+  <meta name="description" content="Contactez le secrétariat de l'ASL Nouveau Village à Cesson : email, téléphone, adresse et formulaire de contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="entete-inner">
+      <a class="logo" href="index.html"><span class="logo-pastille"></span><span class="logo-texte">Nouveau Village</span></a>
+      <button class="menu-burger" aria-label="Ouvrir le menu">☰</button>
+      <nav class="nav-liens">
+        <a href="index.html">Accueil</a>
+        <a href="residence.html">La résidence</a>
+        <a href="vie-copro.html">Vie de copro</a>
+        <a href="documents.html">Documents</a>
+        <a href="contact.html" class="cta actif">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 56px 0 64px;">
+    <div class="conteneur">
+      <div class="hero-eyebrow">Nous joindre</div>
+      <h1 style="font-size: 52px;">On est <span class="accent">à l'écoute</span></h1>
+      <p>Une question, une demande ou un signalement ? Le secrétariat de l'ASL vous répond.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <div class="contact-grille">
+        <div class="reveal">
+          <span class="section-eyebrow">Coordonnées</span>
+          <h2 class="section-titre">Le <em>secrétariat</em></h2>
+          <p class="section-soustitre" id="contact-intro" style="margin-bottom:28px;">[Texte générique à remplacer]</p>
+          <div class="contact-infos">
+            <div class="contact-item"><span class="ci-ico">✉️</span><div><div class="ci-label">Email</div><div class="ci-val" id="contact-email">[à remplacer]</div></div></div>
+            <div class="contact-item"><span class="ci-ico">📞</span><div><div class="ci-label">Téléphone</div><div class="ci-val" id="contact-tel">[à remplacer]</div></div></div>
+            <div class="contact-item"><span class="ci-ico">📍</span><div><div class="ci-label">Adresse</div><div class="ci-val" id="contact-adresse">[à remplacer]</div></div></div>
+            <div class="contact-item"><span class="ci-ico">🕒</span><div><div class="ci-label">Horaires d'accueil</div><div class="ci-val" id="contact-horaires">[à remplacer]</div></div></div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="section-eyebrow">Formulaire</span>
+          <h2 class="section-titre">Écrire au <em>secrétariat</em></h2>
+          <form id="form-contact" style="margin-top:24px;">
+            <div class="form-champ">
+              <label for="nom">Nom et prénom</label>
+              <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-champ">
+              <label for="email">Votre email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-champ">
+              <label for="objet">Objet</label>
+              <input type="text" id="objet" name="objet" required>
+            </div>
+            <div class="form-champ">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-envoyer">Envoyer le message <span class="fleche">→</span></button>
+            <div class="form-note" id="form-message-retour" style="display:none;">
+              ✓ Démo : message bien reçu côté navigateur. L'envoi réel sera branché par la copropriété (email ou service de formulaire).
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-grille">
+        <div>
+          <div class="pied-logo"><span class="pastille"></span>Nouveau Village</div>
+          <p class="pied-desc">Association Syndicale Libre des Propriétaires du Groupe d'Habitation de Nouveau Village — Cesson 77240.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="residence.html">La résidence</a>
+          <a href="vie-copro.html">Vie de copro</a>
+          <a href="documents.html">Documents</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="contact.html">Secrétariat de l'ASL</a>
+        </div>
+      </div>
+      <div class="pied-bas">© <span data-annee></span> ASL Nouveau Village — Cesson 77240. Site à usage des résidents.</div>
+    </div>
+  </footer>
+
+  <script src="js/contenu.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var c = window.contenu.contact;
+      if (c) {
+        document.getElementById('contact-intro').textContent = c.intro;
+        document.getElementById('contact-email').textContent = c.email;
+        document.getElementById('contact-tel').textContent = c.telephone;
+        document.getElementById('contact-adresse').textContent = c.adresse;
+        document.getElementById('contact-horaires').textContent = c.horairesAccueil;
+      }
+    });
+  </script>
+</body>
+</html>
